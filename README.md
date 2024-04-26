@@ -5,5 +5,5 @@ Checkpoints:
 - openpose
 - humanparsing
 - densepose
-- ootd
+- ootd-checkpoints
   ![alt text](image.png)
