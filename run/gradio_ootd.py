@@ -157,13 +157,13 @@ with block:
                 ])
         with gr.Column():
             result_gallery = gr.Gallery(label='Output', show_label=False, elem_id="gallery", preview=True, scale=1)   
-    with gr.Column():
-        run_button = gr.Button(value="Run")
-        n_samples = gr.Slider(label="Images", minimum=1, maximum=4, value=1, step=1)
-        n_steps = gr.Slider(label="Steps", minimum=20, maximum=40, value=20, step=1)
-        # scale = gr.Slider(label="Scale", minimum=1.0, maximum=12.0, value=5.0, step=0.1)
-        image_scale = gr.Slider(label="Guidance scale", minimum=1.0, maximum=5.0, value=2.0, step=0.1)
-        seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=-1)
+        with gr.Column():
+            run_button = gr.Button(value="Run")
+            n_samples = gr.Slider(label="Images", minimum=1, maximum=4, value=1, step=1)
+            n_steps = gr.Slider(label="Steps", minimum=20, maximum=40, value=20, step=1)
+            # scale = gr.Slider(label="Scale", minimum=1.0, maximum=12.0, value=5.0, step=0.1)
+            image_scale = gr.Slider(label="Guidance scale", minimum=1.0, maximum=5.0, value=2.0, step=0.1)
+            seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=-1)
         
     ips = [vton_img, garm_img, n_samples, n_steps, image_scale, seed]
     run_button.click(fn=process_hd, inputs=ips, outputs=[result_gallery])
@@ -246,13 +246,13 @@ with block:
                 ])
         with gr.Column():
             result_gallery_dc = gr.Gallery(label='Output', show_label=False, elem_id="gallery", preview=True, scale=1)   
-    with gr.Column():
-        run_button_dc = gr.Button(value="Run")
-        n_samples_dc = gr.Slider(label="Images", minimum=1, maximum=4, value=1, step=1)
-        n_steps_dc = gr.Slider(label="Steps", minimum=20, maximum=40, value=20, step=1)
-        # scale_dc = gr.Slider(label="Scale", minimum=1.0, maximum=12.0, value=5.0, step=0.1)
-        image_scale_dc = gr.Slider(label="Guidance scale", minimum=1.0, maximum=5.0, value=2.0, step=0.1)
-        seed_dc = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=-1)
+        with gr.Column():
+            run_button_dc = gr.Button(value="Run")
+            n_samples_dc = gr.Slider(label="Images", minimum=1, maximum=4, value=1, step=1)
+            n_steps_dc = gr.Slider(label="Steps", minimum=20, maximum=40, value=20, step=1)
+            # scale_dc = gr.Slider(label="Scale", minimum=1.0, maximum=12.0, value=5.0, step=0.1)
+            image_scale_dc = gr.Slider(label="Guidance scale", minimum=1.0, maximum=5.0, value=2.0, step=0.1)
+            seed_dc = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=-1)
         
     ips_dc = [vton_img_dc, garm_img_dc, category_dc, n_samples_dc, n_steps_dc, image_scale_dc, seed_dc]
     run_button_dc.click(fn=process_dc, inputs=ips_dc, outputs=[result_gallery_dc])
