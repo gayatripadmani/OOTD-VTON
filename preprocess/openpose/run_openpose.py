@@ -68,12 +68,12 @@ class OpenPose:
                 candidate[i][1] *= 512
 
             keypoints = {"pose_keypoints_2d": candidate}
-            with open("run/images_output/keypoints/keypoints.json", "w") as f:
+            with open("/content/OOTD-VTON/run/images_output/keypoints.json", "w") as f:
                 json.dump(keypoints, f)
-            
-            # print(candidate)
+            #
+            # # print(candidate)
             output_image = cv2.resize(cv2.cvtColor(detected_map, cv2.COLOR_BGR2RGB), (768, 1024))
-            cv2.imwrite('run/images_output/keypoints/out_pose.jpg', output_image)
+            cv2.imwrite('/content/OOTD-VTON/run/images_output/out_pose.jpg', output_image)
 
         return keypoints
 
